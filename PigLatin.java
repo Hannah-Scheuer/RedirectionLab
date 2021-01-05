@@ -1,12 +1,25 @@
+import java.util.*;
 public class PigLatin{
 
   public static void main( String[]args ){
-    String str = "the!";
-    System.out.println(pigLatinBest(str));
+    Scanner n = new Scanner( System.in );
+    while (n.hasNextLine()){
+      Scanner s = new Scanner (n.nextLine());
+      String temp = "";
+      while (s.hasNext()){
+        temp = s.next();
+        System.out.print(pigLatinBest(temp));
+        System.out.print(" ");
+      }
+      System.out.println();
+    }
   }
 
   public static String pigLatinSimple(String s){
     s = s.toLowerCase();
+    if (s.length()==1){
+      return s + "hay";
+    }
     char[] vowels = new char[]{'a','e','i','o','u'};
     char start = s.charAt(0);
     boolean vowel = false;
@@ -28,6 +41,9 @@ public class PigLatin{
 
   public static String pigLatin(String s){
     s = s.toLowerCase();
+    if (s.length()==1){
+      return s + "hay";
+    }
     char[] vowels = new char[]{'a','e','i','o','u'};
     char start = s.charAt(0);
     boolean vowel = false;
@@ -60,6 +76,9 @@ public class PigLatin{
 
   public static String pigLatinBest(String s){
     s = s.toLowerCase();
+    if (s.length()==1){
+      return s + "hay";
+    }
     char[] vowels = new char[]{'a','e','i','o','u'};
     char start = s.charAt(0);
     boolean vowel = false;
